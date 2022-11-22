@@ -13,20 +13,20 @@ const SinglePage = lazy(() => import('../pages/SinglePage'))
 
 const App = () => {
 	return (
-		<Router>
-			<div className='app'>
+		<Router basename="/react-udemy-project3">
+			<div className="app">
 				<AppHeader />
 				<main>
 					<Suspense fallback={<Spinner />}>
 						<Routes>
-							<Route path='/' element={<MainPage />} />
-							<Route path='/comics' element={<ComicsPage />} />
-							<Route path='/comics/:id' element={<SinglePage Component={SingleComicLayout} dataType='comic' />} />
+							<Route path="/" element={<MainPage />} />
+							<Route path="/comics" element={<ComicsPage />} />
+							<Route path="/comics/:id" element={<SinglePage Component={SingleComicLayout} dataType="comic" />} />
 							<Route
-								path='/characters/:id'
-								element={<SinglePage Component={SingleCharacterLayout} dataType='character' />}
+								path="/characters/:id"
+								element={<SinglePage Component={SingleCharacterLayout} dataType="character" />}
 							/>
-							<Route path='*' element={<Page404 />} />
+							<Route path="*" element={<Page404 />} />
 						</Routes>
 					</Suspense>
 				</main>
